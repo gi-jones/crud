@@ -43,11 +43,11 @@ be done as part of the component configuration or on the fly.
         ]);
   }
 
-If you'd like to configure it on the fly you can use the eventManager to change the event subject as the event is emitted.
+To configure it on the fly:
 
 .. code-block:: phpinline
 
-  $this->eventManager()->on('Crud.setFlash', function (Event $event) {
+  $this->Crud->on('setFlash', function (Event $event) {
       if ($event->getSubject()->success) {
           $event->getSubject()->params['class'] = ['alert', 'alert-success', 'alert-dismissible'];
       }
